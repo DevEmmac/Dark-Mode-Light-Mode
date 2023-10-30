@@ -6,28 +6,29 @@ const explore = document.getElementById('explore');
 const party = document.getElementById('party');
 const textBox = document.getElementById('text-box');
 
+ function imageMode (color) {
+    camp.src = `img/undraw_camping_${color}.svg`;
+    explore.src = `img/undraw_explore_${color}.svg`;
+    party.src = `img/undraw_outdoor_party_${color}.svg`;
+
+}
 // Dark Mode Styles
 function darkMode() {
     nav.style.backgroundColor = 'rgb(0 0 0 / 50%)';
     textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
     toggleIcon.children[0].textContent = 'Dark Mode';
-    toggleIcon.children[1].classList.remove('fa-sun');
-    toggleIcon.children[1].classList.add('fa-moon');
-    camp.src ='img/undraw_camping_dark.svg';
-    explore.src ='img/undraw_explore_dark.svg';
-    party.src ='img/undraw_outdoor_party_dark.svg';
+    toggleIcon.children[1].classList.replace('fa-sun','fa-moon');
+    imageMode('dark')
 }
 
 // light Mode Styles
 function lightMode () {
-    nav.style.backgroundColor = 'rgb(0 0 0 / 50%)';
-    textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
-    toggleIcon.children[0].textContent = 'Dark Mode';
-    toggleIcon.children[1].classList.add('fa-sun');
-    toggleIcon.children[1].classList.remove('fa-moon');
-    camp.src ='img/undraw_camping_light.svg';
-    explore.src ='img/undraw_explore_light.svg';
-    party.src ='img/undraw_outdoor_party_light.svg';
+    nav.style.backgroundColor = 'rgb(255 255 255 / 50%)';
+    textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)';
+    toggleIcon.children[0].textContent = 'Light Mode';
+    toggleIcon.children[1].classList.replace('fa-moon','fa-sun');
+    imageMode('light')
+   
 
 }
 
